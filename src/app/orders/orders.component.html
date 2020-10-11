@@ -1,0 +1,35 @@
+
+<div *ngIf="orderList" class="parentTable">
+<table mat-table [dataSource]="orderList" class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="customerName">
+    <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="noOfItemsOrdered">
+    <th mat-header-cell *matHeaderCellDef> No. of Items Orderes </th>
+    <td mat-cell *matCellDef="let element"> {{element.noOfItemsOrdered}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalAmount">
+    <th mat-header-cell *matHeaderCellDef> Total Amount </th>
+    <td mat-cell *matCellDef="let element">Rs. {{element.totalAmount}} </td>
+  </ng-container>
+  <ng-container matColumnDef="orderStatus">
+    <th mat-header-cell *matHeaderCellDef> order Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.orderStatus}} </td>
+  </ng-container>
+  <ng-container matColumnDef="changeStatus">
+    <th style="width:15%" mat-header-cell *matHeaderCellDef> Change Status </th>
+    <td mat-cell *matCellDef="let element">
+         <button mat-raised-button color="primary" (click)="changeStatus($event,element)">Change Status</button> 
+         </td>
+  </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="orderListColumns"></tr>
+  <tr mat-row (click)="gotoOrderDetails($event,row)" *matRowDef="let row; columns: orderListColumns;"></tr>
+  
+    </table>
+    </div>

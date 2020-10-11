@@ -1,0 +1,26 @@
+
+ <div>
+ <button mat-raised-button color="primary" (click)="goBack()">Back</button> 
+ </div>
+<div *ngIf="orderDetails"  class="mat-elevation-z8 orderDetails" >
+<h2>{{orderDetails.customerName}} </h2>
+<div> 
+    <ul class="items">
+        <li *ngFor="let item of orderDetails.items">
+            <span class="left">{{item.itemName}}</span> : <span class="right">Rs.{{item.itemPrice}}</span></li>
+            <hr >
+            <li style="list-style:none">
+                <span class="left">Total</span> : <span class="right">Rs.{{totalPrice}}</span>
+                 </li>
+    </ul>
+     <hr>
+    <div> <strong>Delivery Address: </strong>
+    <span class="address">Building: {{orderDetails.deliveryAddress.buildingNo}},  <br>
+       Street: {{orderDetails.deliveryAddress.street}}, <br>
+       City: {{orderDetails.deliveryAddress.city}}, 
+       Pincode: {{orderDetails.deliveryAddress.pincode}}, <br>
+       State: {{orderDetails.deliveryAddress.state}}
+    </span>
+    </div>
+</div>
+</div>

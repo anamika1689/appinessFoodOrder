@@ -1,0 +1,21 @@
+.orderDetails{
+    margin: 3rem;
+    padding: 3rem
+}
+
+.address{
+    display: block
+}
+.items{
+    width: 18%;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+button{
+    margin-top: 1rem;
+    margin-left: 3rem;
+}

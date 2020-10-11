@@ -1,0 +1,9 @@
+mat-toolbar{
+    background-color: #3f51b5 !important
+}
+
+.appName{
+    margin: auto;
+    padding-right: 135px;
+    color: white;
+}
