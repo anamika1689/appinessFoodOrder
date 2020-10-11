@@ -1,7 +1,12 @@
 
- <div>
+<div class="pageTitle">
+<h1> Order Details </h1>
+<button mat-raised-button color="primary" (click)="goBack()">Back</button>
+<hr>
+</div>
+ <!--<div>
  <button mat-raised-button color="primary" (click)="goBack()">Back</button> 
- </div>
+ </div>-->
 <div *ngIf="orderDetails"  class="mat-elevation-z8 orderDetails" >
 <h2>{{orderDetails.customerName}} </h2>
 <div> 

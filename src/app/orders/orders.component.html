@@ -1,6 +1,11 @@
 
-<div *ngIf="orderList" class="parentTable">
-<table mat-table [dataSource]="orderList" class="mat-elevation-z8">
+<div class="pageTitle">
+<h1> Order List </h1>
+<hr>
+</div>
+
+<div *ngIf="orderList" class="parentTable mat-elevation-z8">
+<table mat-table [dataSource]="orderList" class="">
 
 
   <ng-container matColumnDef="customerName">
@@ -30,6 +35,8 @@
 
 <tr mat-header-row *matHeaderRowDef="orderListColumns"></tr>
   <tr mat-row (click)="gotoOrderDetails($event,row)" *matRowDef="let row; columns: orderListColumns;"></tr>
-  
+ 
     </table>
+     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+</mat-paginator>
     </div>
